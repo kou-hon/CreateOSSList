@@ -1,0 +1,2 @@
+# CreateOSSList
+VisualStudioのプロジェクトファイルから、使用しているOSSの情報をいろいろ集める
