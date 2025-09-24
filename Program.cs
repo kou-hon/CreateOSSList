@@ -106,8 +106,9 @@ static async Task<NuSpec> GetNuSpecAsync(HttpClient httpClient, string packageId
     {
         return new("NoData", "NoData", "NoData", "NoData", "NoData");
     }
+    if(ns is null ) throw new InvalidOperationException("Namespace is null, cannot parse nuspec.");
 
-    var licenseValue = doc.Descendants(ns + "metadata")
+    var licenseValue = doc!.Descendants(ns + "metadata")
     .Select(x => x?.Element(ns + "license")?.Value)
     .FirstOrDefault();
 
